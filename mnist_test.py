@@ -3,10 +3,14 @@
 # author:  9crk.from China.ShenZhen
 # time:    2017-03-22
 
+import sys
+if ( len(sys.argv)!=2 or sys.argv[1]=="--help" ):
+    print "Usage: python <name of this script> <image to test net> \nFor ex: python ./test_mnist.py ./test.png"
+    sys.exit(0)
+
 import caffe
 import numpy as np
 import cv2
-import sys
 import Image
 import matplotlib.pyplot as plt
 
@@ -27,5 +31,3 @@ out = net.forward_all(data=np.asarray([img.transpose(2,0,1)]))
 
 print out['prob'][0]
 print "My answer is: "+str(out['prob'][0].argmax())
-
-
