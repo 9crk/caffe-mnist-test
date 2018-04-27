@@ -26,6 +26,6 @@ img = 1.0 - img/255.0
 out = net.forward_all(data=np.asarray([img.transpose(2,0,1)]))
 
 print out['prob'][0]
-print out['prob'][0].argmax()
+print "My answer is: "+str(out['prob'][0].argmax())
 
 
