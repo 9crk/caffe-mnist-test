@@ -7,8 +7,7 @@ import caffe
 import numpy as np
 import cv2
 import sys
-import Image
-import matplotlib.pyplot as plt
+
 
 model = 'examples/mnist/lenet.prototxt';
 weights = 'examples/mnist/lenet_iter_10000.caffemodel';
