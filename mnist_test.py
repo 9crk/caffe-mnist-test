@@ -3,11 +3,14 @@
 # author:  9crk.from China.ShenZhen
 # time:    2017-03-22
 
+import sys
+if ( len(sys.argv)!=2 or sys.argv[1]=="--help" ):
+    print "Usage: python <name of this script> <image to test net> \nFor ex: python ./test_mnist.py ./test.png"
+    sys.exit(0)
+
 import caffe
 import numpy as np
 import cv2
-import sys
-
 
 model = 'examples/mnist/lenet.prototxt';
 weights = 'examples/mnist/lenet_iter_10000.caffemodel';
@@ -25,6 +28,4 @@ img = 1.0 - img/255.0
 out = net.forward_all(data=np.asarray([img.transpose(2,0,1)]))
 
 print out['prob'][0]
-print out['prob'][0].argmax()
-
-
+print "My answer is: "+str(out['prob'][0].argmax())
