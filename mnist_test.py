@@ -11,8 +11,6 @@ if ( len(sys.argv)!=2 or sys.argv[1]=="--help" ):
 import caffe
 import numpy as np
 import cv2
-import Image
-import matplotlib.pyplot as plt
 
 model = 'examples/mnist/lenet.prototxt';
 weights = 'examples/mnist/lenet_iter_10000.caffemodel';
